@@ -15,9 +15,7 @@ function FilteredEventsPage(props) {
 
   const filterData = router.query.slug;
 
-  const { data, error } = useSWR(
-    'https://nextjs-course-c81cc-default-rtdb.firebaseio.com/events.json'
-  );
+  const { data, error } = useSWR(process.env.API_URL);
 
   useEffect(() => {
     if (data) {
